@@ -78,3 +78,14 @@ def guardar_output(asignaciones: List[Asignacion], ruta_archivo: str) -> None:
         escritor_csv = csv.writer(archivo)
         for asig in asignaciones:
             escritor_csv.writerow([asig.id_tarea, asig.id_recurso, asig.inicio, asig.fin]) 
+def main() -> None:
+   
+    if len(sys.argv) < 2:
+        print("Uso: python main.py <makespan_objetivo>")
+        sys.exit(1)
+    
+    makespan_objetivo = float(sys.argv[1])
+    
+   
+    tareas = leer_tareas('tareas.txt')
+    recursos = leer_recursos('recursos.txt')
