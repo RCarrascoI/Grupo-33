@@ -7,3 +7,8 @@ class Tarea:
         self.id = id_tarea
         self.duracion = duracion
         self.categoria = categoria
+class Recurso:
+    def init(self, id_recurso: str, categorias: Set[str]):
+        self.id = id_recurso
+        self.categorias = categorias
+        self.tiempo_disponible = 0  
