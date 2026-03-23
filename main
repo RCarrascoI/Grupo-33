@@ -31,3 +31,15 @@ def leer_tareas(ruta_archivo: str) -> List[Tarea]:
                 categoria = fila[2].strip()
                 tareas.append(Tarea(id_tarea, duracion, categoria))
     return tareas 
+
+def leer_recursos(ruta_archivo: str) -> List[Recurso]:
+    recursos = []
+    with open(ruta_archivo, mode='r', encoding='utf-8') as archivo:
+        lector_csv = csv.reader(archivo)
+        for fila in lector_csv:
+            if fila:
+                id_recurso = fila[0].strip()
+               
+                categorias = {cat.strip() for cat in fila[1:]}
+                recursos.append(Recurso(id_recurso, categorias))
+    return recursos
