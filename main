@@ -72,3 +72,9 @@ def planificar_tareas(tareas: List[Tarea], recursos: List[Recurso]) -> List[Asig
         mejor_recurso.tiempo_disponible = fin
 
     return asignaciones
+
+def guardar_output(asignaciones: List[Asignacion], ruta_archivo: str) -> None:
+    with open(ruta_archivo, mode='w', encoding='utf-8', newline='') as archivo:
+        escritor_csv = csv.writer(archivo)
+        for asig in asignaciones:
+            escritor_csv.writerow([asig.id_tarea, asig.id_recurso, asig.inicio, asig.fin]) 
