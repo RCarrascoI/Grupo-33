@@ -89,3 +89,16 @@ def main() -> None:
    
     tareas = leer_tareas('tareas.txt')
     recursos = leer_recursos('recursos.txt')
+    
+    asignaciones = planificar_tareas(tareas, recursos)
+    
+    
+    guardar_output(asignaciones, 'output.txt')
+    
+   
+    makespan_logrado = max(asig.fin for asig in asignaciones)
+    print(f"Planificación completada. Makespan logrado: {makespan_logrado}")
+    print(f"Makespan objetivo era: {makespan_objetivo}")
+
+if __name__ == '__main__':
+    main() 
