@@ -1,0 +1,9 @@
+import sys
+import csv
+from typing import List, Dict, Set
+
+class Tarea:
+    def __init__(self, id_tarea: str, duracion: int, categoria: str):
+        self.id = id_tarea
+        self.duracion = duracion
+        self.categoria = categoria
