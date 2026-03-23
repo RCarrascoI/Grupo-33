@@ -8,13 +8,13 @@ class Tarea:
         self.duracion = duracion
         self.categoria = categoria
 class Recurso:
-    def init(self, id_recurso: str, categorias: Set[str]):
+    def __init__(self, id_recurso: str, categorias: Set[str]):
         self.id = id_recurso
         self.categorias = categorias
-        self.tiempo_disponible = 0 
+        self.tiempo_disponible = 0  
 
 class Asignacion:
-    def init(self, id_tarea: str, id_recurso: str, inicio: int, fin: int):
+    def __init__(self, id_tarea: str, id_recurso: str, inicio: int, fin: int):
         self.id_tarea = id_tarea
         self.id_recurso = id_recurso
         self.inicio = inicio
