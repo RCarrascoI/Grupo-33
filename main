@@ -19,3 +19,15 @@ class Asignacion:
         self.id_recurso = id_recurso
         self.inicio = inicio
         self.fin = fin 
+
+def leer_tareas(ruta_archivo: str) -> List[Tarea]:
+    tareas = []
+    with open(ruta_archivo, mode='r', encoding='utf-8') as archivo:
+        lector_csv = csv.reader(archivo)
+        for fila in lector_csv:
+            if fila: 
+                id_tarea = fila[0].strip()
+                duracion = int(fila[1].strip())
+                categoria = fila[2].strip()
+                tareas.append(Tarea(id_tarea, duracion, categoria))
+    return tareas 
